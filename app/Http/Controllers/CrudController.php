@@ -34,4 +34,19 @@ class CrudController extends Controller
 					);
 			return view('crud/crud_view',$data);
 		}
+
+
+		public function add_buku(Request $request)
+		{
+			$arr_data['title'] = $request->input('title');
+			$arr_data['author'] = $request->input('author');
+			$arr_data['sinopsis'] = $request->input('sinopsis');
+			$arr_data['cover'] = $request->input('cover');
+			try{
+				Books::insert($arr_data);
+				DB::commit();
+			}catch(Exception $e){
+
+			}
+		}
 }

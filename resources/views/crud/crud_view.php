@@ -67,7 +67,7 @@
 			  </div>
 			   <div class="form-group">
 			    <label>Sinopsi:</label>
-			    <textarea class="form-control" name="sinopsi" rows="10" ></textarea>
+			    <textarea class="form-control" name="sinopsis" rows="10" ></textarea>
 			  </div>
 			   <div class="form-group">
 			    <label>Url Cover:</label>

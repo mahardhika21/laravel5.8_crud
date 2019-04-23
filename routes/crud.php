@@ -16,3 +16,5 @@ Route::post('/add_buku', [
 	"as"    => 'crud.insertData'
 ]);
 
+
+
