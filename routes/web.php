@@ -57,3 +57,4 @@ Route::post('/operation_calculator', [
 	"uses"  => 'MyUser@opCalculator',
 	"as"    => "web.opCalculator"
 ]);
+

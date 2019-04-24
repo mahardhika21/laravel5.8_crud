@@ -49,4 +49,29 @@ class CrudController extends Controller
 
 			}
 		}
+
+
+		public function detail_buku(Request $request,$id)
+		{
+
+			$data = array
+					(
+						"book_detail" => Books::where('book_id',$id)->first(),
+						"url"         => $this->url->to('/');
+					);
+			return view('crud/crud_detail');
+
+		}
+
+
+		public function view_buku(Request $request, $id)
+		{
+				$data = array
+						(
+							"book_detail" => Books::where('book_id',$id)->first(),
+							"url"         => $this->url->to('/')
+						);
+
+				return view('crud/crud_update_view');
+		}
 }
