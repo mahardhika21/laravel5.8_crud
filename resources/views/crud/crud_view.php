@@ -37,7 +37,7 @@
         <td><?php echo $book['author']; ?></td>
          <td><?php echo $book['sinopsis']; ?></td>
         <td><?php echo $book['cover']; ?></td>
-        <td style="width: 30px;"><a class="btn btn-sm btn-danger">delete</a><a class="btn btn-info btn-sm">view/edit</td>
+        <td style="width: 30px;"><a class="btn btn-sm btn-danger delete" data-id_book="<?php echo $book['book_id']; ?>">delete</a><a class="btn btn-info btn-sm" href="<?php echo $url .'/crud/detail_books/'.$book['book_id']; ?> ">view/edit</td>
       </tr>
   <?php } ?>
     </tbody>
@@ -48,7 +48,6 @@
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-    
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
@@ -56,7 +55,7 @@
           <h4 class="modal-title">Tambah Data Buku</h4>
         </div>
         <div class="modal-body">
-		<form action="<?php echo $url .''; ?>">
+		<form action="<?php echo $url .'/crud/add_buku'; ?>" method="post">
 			  <div class="form-group">
 			    <label for="email">Judul/Title:</label>
 			    <input type="text" class="form-control" id="title" name="title">
@@ -90,7 +89,47 @@
 <script type="text/javascript">
 	$(document).ready( function () {
     		$('#crudTable').DataTable();
+
+        var base_url = '<?php echo $url; ?>';
+
+        $('.delete').on('click', function(){
+            let id = $(this).data('id_book');
+          //  alert(id);
+            
+            let del = confirm("apakah anda akan menghapus data ini?");
+            if(confirm === true)
+            {
+                ajax_delete(id);
+            }else{
+                alert("trima kasih :)");
+            }
+
+        });
+
+        function ajax_delete(id)
+        {
+            $.ajax({
+                url      : base_url +'/crud/delete_books/'+id,
+                type     : 'GET',
+                dataType : 'text',
+                success : function(response){
+                    if(response === "ok")
+                    {
+                        window.location.reload(true);
+                    }else{
+                        alert('data gagal di hapus');
+                        window.location.reload(true);
+                    }
+                },
+                error : function(response)
+                {
+                    alert("galat");
+                    window.location.reload(true);
+                }
+            });
+        }
 	});
+
 </script>
 </body>
 </html>

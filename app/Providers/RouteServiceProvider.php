@@ -41,7 +41,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapCrudRoutes();
 
-        //
+        // 
     }
 
     /**
