@@ -45,7 +45,7 @@ class CrudController extends Controller
 			try{
 				Books::insert($arr_data);
 				DB::commit();
-				return redirect('crud/crud_view');
+				return redirect('crud');
 			}catch(Exception $e){
 				echo $e->message;
 			}
@@ -80,16 +80,19 @@ class CrudController extends Controller
 		public function update_buku(Request $request)
 		{
 			$book_id  = $request->input('book_id');
-			$arr_data['title'] = $request->input('title');
+			$arr_data['title'] = $request->input('judul');
 			$arr_data['author'] = $request->input('author');
 			$arr_data['sinopsis'] = $request->input('sinopsis');
-			$arr_data['cover'] = $request->input('cover');
+			$arr_data['cover'] = $request->input('coverurl');
 
+			// echo '<pre>'.print_r($arr_data, true).'</pre>';
+			// echo $book_id;
+			// die();
 			try
 			{
 				Books::where('book_id',$book_id)->update($arr_data);
 				DB::commit();
-				return redirect('crud/crud_view');
+				return redirect('crud');
 			}catch(Exception $e)
 			{
 				echo $e->message;

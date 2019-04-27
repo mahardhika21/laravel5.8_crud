@@ -58,3 +58,18 @@ Route::post('/operation_calculator', [
 	"as"    => "web.opCalculator"
 ]);
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/session',[
+	"uses"  => "MyUser@session",
+	"as"    => "get.session"
+]);
+
+Route::get('/set_session', [
+	"uses"  => "MyUser@setSession",
+	"as"    => "get.session"
+]);

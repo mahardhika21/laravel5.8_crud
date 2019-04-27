@@ -22,7 +22,7 @@
             <div class="form-group"><label for="form17">Author</label> <input type="text" class="form-control" name="author" placeholder="Author" value="<?php echo $book_detail['author']; ?>"> </div>
             <div class="form-group"><label for="form18">Sinopsis</label> <input type="text" class="form-control" name="sinopsis" value="<?php echo $book_detail['sinopsis']; ?>"> </div>
             <div class="form-row">
-              <div class="form-group col-md-12"> <label for="form19">Url</label> <input type="text" class="form-control" id="coverurl" value="<?php echo $book_detail['cover']; ?>"> </div>
+              <div class="form-group col-md-12"> <label for="form19">Url</label> <input type="text" class="form-control" name="coverurl" value="<?php echo $book_detail['cover']; ?>"> </div>
             </div>
             <button type="submit" class="btn btn-primary">submit</button>
           </form>

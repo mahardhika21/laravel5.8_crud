@@ -56,4 +56,24 @@ class Myuser extends Controller {
 	{
 		
 	}
+
+
+	public function session(Request $request)
+	{
+		$sesi = $request->session()->get('datauser');
+
+		echo '<pre>'.print_r($sesi, true) .'</pre>';
+	}
+
+
+	public function setSession(Request $request)
+	{
+		$data = array(
+			"nama"     => "naruto",
+			"email"    => "naruto@gmail.com",
+			"password" => "23213123131321",
+		);
+
+		$request->session()->put('datauser',$data);
+	}
 }

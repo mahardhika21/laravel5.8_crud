@@ -27,7 +27,7 @@ Route::get('/delete_books/{id}',[
 ]);
 
 
-Route::put('/update_books',[
+Route::post('/update_books',[
 		"uses"  => 'CrudController@update_buku',
 		"as"    => 'crud.update_book'
 ]);

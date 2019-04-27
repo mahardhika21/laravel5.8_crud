@@ -97,7 +97,7 @@
           //  alert(id);
             
             let del = confirm("apakah anda akan menghapus data ini?");
-            if(confirm === true)
+            if(del === true)
             {
                 ajax_delete(id);
             }else{
