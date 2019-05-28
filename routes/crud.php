@@ -32,3 +32,26 @@ Route::post('/update_books',[
 		"as"    => 'crud.update_book'
 ]);
 
+
+Route::get('/upload',[
+	"uses"    => 'CrudController@upload_img',
+	"as"      => 'web.insert_img',
+]);
+
+Route::post('/upload', [
+	"uses"   => 'CrudController@proses_upload',
+	"as"     => 'web.proses_upload',
+]);
+
+
+Route::get('/flash', [
+	"middleware" =>"web",
+	"uses" => "CrudController@flash",
+	"as"   => "web.flash",
+]);
+
+Route::get('/flash_msg/{type?}', [
+	"middleware" =>"web",
+	"uses" 		 => "CrudController@test_flash",
+	"as"   		 => "web.flash",
+]);

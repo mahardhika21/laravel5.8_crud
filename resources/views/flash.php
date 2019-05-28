@@ -9,27 +9,24 @@
 </head>
 
 <body>
+
   <div class="py-5">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="card">
-            <div class="card-header"> login</div>
+            <div class="card-header"> Header </div>
             <div class="card-body">
-              <h1 class="display-4" style="">Login User</h1>
-              <form id="c_form-h" class="w-75 justify-content-center">
-                <div class="form-group row"> <label for="inputmailh" class="col-2 col-form-label">E-mail</label>
-                  <div class="col-10">
-                    <input type="email" class="form-control" id="inputmailh" placeholder="mail@example.com"> </div>
-                </div>
-                <div class="form-group row"> <label for="inputpasswordh" class="col-2 col-form-label">Password</label>
-                  <div class="col-10">
-                    <input type="password" class="form-control" id="inputpasswordh" placeholder="Password"> </div>
-                </div>
-                <button type="submit" class="btn btn-primary justify-content-center align-items-end flex-grow-1">Submit</button>
-              </form>
+              <h4>Title</h4>
+              <p>Some quick example text to build on the card title .</p>
+              <?php 
+  $err = Session::get('status'); 
+      echo $err;
+  ?>
             </div>
           </div>
+
+
         </div>
       </div>
     </div>

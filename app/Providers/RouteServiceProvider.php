@@ -41,6 +41,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapCrudRoutes();
 
+        $this->mapUserRoutes();
+
         // 
     }
 
@@ -84,5 +86,20 @@ class RouteServiceProvider extends ServiceProvider
         Route::prefix('crud')
                ->namespace($this->namespace)
                ->group(base_path('routes/crud.php'));
+    }
+
+
+
+    /** 
+     * Define the "user" routes for the aplications custom.
+     *
+     * @return void
+     */
+
+    protected function mapUserRoutes()
+    {
+        Route::prefix('user')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/user.php'));
     }
 }

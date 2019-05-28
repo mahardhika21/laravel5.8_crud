@@ -27,7 +27,7 @@ Route::get('/halo/{nama}', function($nama){
 	return "halo ". $nama;
 });
 
-Route::get('/user', 'myUser@index');
+Route::get('/user1', 'myUser@index');
 
 Route::post('postpertama', function(){
 	return "post_1";
@@ -59,7 +59,7 @@ Route::post('/operation_calculator', [
 ]);
 
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -73,3 +73,5 @@ Route::get('/set_session', [
 	"uses"  => "MyUser@setSession",
 	"as"    => "get.session"
 ]);
+
+
